@@ -33,7 +33,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: snek/nym-mixnode-docker:latest
+          tags: snekone/nym-mixnode-docker:latest
+          secrets: |
+            GIT_AUTH_TOKEN=${{ github.token }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
