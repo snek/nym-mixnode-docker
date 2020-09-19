@@ -24,4 +24,7 @@ The CMD is setup to be:
 This means the process will assume the name of the node is "mixer" and will look in the following directory for the config file:
 `/root/.nym/mixnodes/mixer/config/config.toml`
 
-### Generating PEM files
+A VOLUME is configured for the directory:
+`VOLUME [ "/root/.nym" ]`
+This lets you mount this directory for easy configuration.
+`docker run -v $PWD/config:/root/.nym snekone/nym-mixnode-docker`
