@@ -1,0 +1,12 @@
+[mixnode]
+id = 'your-unique-name'
+location = 'some location - not required'
+layer = 3 #can be 1, 2 or 3
+listening_address = '0.0.0.0:1789'
+private_sphinx_key_file = '/root/.nym/mixnodes/mixer/data/private_sphinx.pem'
+public_sphinx_key_file = '/root/.nym/mixnodes/mixer/data/public_sphinx.pem'
+announce_address = '123.123.123.123:1789' #your external ip and the port the mixer listens to 1789 being default
+presence_directory_server = 'https://directory.nymtech.net'
+metrics_directory_server = 'https://directory.nymtech.net'
+nym_root_directory = '/root/.nym/mixnodes'
+[logging]

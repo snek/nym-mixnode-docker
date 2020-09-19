@@ -11,7 +11,8 @@ RUN set -ex \
     && cargo build --release
 
 FROM gcr.io/distroless/cc
+VOLUME [ "/root/.nym" ]
 ENTRYPOINT ["/tini", "-v", "--"]
-CMD [ "/usr/local/bin/nym-mixnode" ]
+CMD [ "/usr/local/bin/nym-mixnode", "run", "--id", "mixer"]
 COPY --from=builder /app/nym/target/release/nym-mixnode /usr/local/bin/
 COPY --from=builder /usr/bin/tini-static /tini
