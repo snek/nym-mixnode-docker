@@ -5,7 +5,9 @@ https://github.com/nymtech/nym
 
 The image uses https://github.com/krallin/tini to handle the init. Considering it's not possible to do a `docker run --init` in Kubernetes it was added directly to the image.
 
-The first stage of the build generates the executable and installs `tini` using `apt`. In the second stage these 2 files are copied out into a https://github.com/GoogleContainerTools/distroless container, resulting in the smallest possible Docker image of only 11MB.
+The first stage of the build generates the executable and installs `tini` using `apt`. In the second stage these 2 files are copied out into a ~~https://github.com/GoogleContainerTools/distroless container, resulting in the smallest possible Docker image of only 11MB.~~
+
+For the sake of usability and being able to run bash scripts in the container I have decided to not use distroless and go with https://hub.docker.com/r/bitnami/minideb instead. This more than doubles the size of the image but it's still below 90MB.
 
 
 ## Usage

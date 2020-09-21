@@ -10,7 +10,9 @@ RUN set -ex \
     && cd ./mixnode \
     && cargo build --release
 
-FROM gcr.io/distroless/cc
+FROM bitnami/minideb:buster
+RUN set -ex \
+    && install_packages libssl1.1
 VOLUME [ "/root/.nym" ]
 ENTRYPOINT ["/tini", "-v", "--"]
 CMD [ "/usr/local/bin/nym-mixnode", "run", "--id", "mixer"]
