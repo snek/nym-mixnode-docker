@@ -30,3 +30,12 @@ A VOLUME is configured for the directory:
 `VOLUME [ "/root/.nym" ]`
 This lets you mount this directory for easy configuration.
 `docker run -v $PWD/config:/root/.nym snekone/nym-mixnode-docker`
+
+### nym-init.sh
+I have added a little script nym-init.sh which can be used in a kubernetes initContainer. It takes the same 3 arguments that the normal nym-mixnode init command does, albeit shorted to just one letter:
+
+`nym-init.sh -h 127.0.0.1 -i name-or-id -l 1`
+
+h for host
+i for name/id
+l for layer
