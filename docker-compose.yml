@@ -10,6 +10,5 @@ services:
     build:
       context: ./
     volumes:
-      - ./data:/root/.nym
-    command: "nym-mixnode run --id=x"
-#    command: "nym-mixnode init --id=x --host=111.222.333.444 --location='city, country' --layer=3 --incentives-address=0x0000000....0000"
+      - ./config.toml:/root/.nym/mixnodes/mixer/config/config.toml
+    command: "nym-mixnode run --id=mixer"
