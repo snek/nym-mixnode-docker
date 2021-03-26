@@ -1,0 +1,15 @@
+version: '2'
+services:
+  nym-mixnode:
+    image: nym-mixnode
+    container_name: nym-mixnode
+    restart: unless-stopped
+    mem_limit: 256mb
+    ports:
+      - 1789:1789
+    build:
+      context: ./
+    volumes:
+      - ./data:/root/.nym
+    command: "nym-mixnode run --id=x"
+#    command: "nym-mixnode init --id=x --host=111.222.333.444 --location='city, country' --layer=3 --incentives-address=0x0000000....0000"
