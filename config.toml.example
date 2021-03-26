@@ -1,8 +1,6 @@
 [mixnode]
 location = 'London, UK'
 layer = 3
-listening_address = '0.0.0.0:1789'
-# your public ipv4 address + port
 announce_address = '203.30.113.42:1789'
 #incentives_address = '0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B'
 
@@ -11,4 +9,5 @@ id = 'mixer'
 nym_root_directory = '/root/.nym/mixnodes'
 private_sphinx_key_file = '/root/.nym/mixnodes/mixer/data/private_sphinx.pem'
 public_sphinx_key_file = '/root/.nym/mixnodes/mixer/data/public_sphinx.pem'
+listening_address = '0.0.0.0:1789'
 [logging]
