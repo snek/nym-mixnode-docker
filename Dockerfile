@@ -5,10 +5,7 @@ RUN set -ex
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libssl-dev pkg-config git tini
 RUN git clone https://github.com/nymtech/nym.git
-RUN cd ./nym \
-RUN git checkout tags/${NYM_VERSION}
-RUN cd ./mixnode
-RUN cargo build --release
+RUN cd ./nym && git checkout tags/${NYM_VERSION} && cd ./mixnode && cargo build --release
 
 FROM bitnami/minideb:buster
 RUN set -ex && install_packages libssl1.1 ca-certificates
