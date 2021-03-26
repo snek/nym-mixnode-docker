@@ -1,6 +1,6 @@
 FROM rust:1-slim-buster AS builder
-ARG NYM_VERSION=v0.9.2
 WORKDIR /app
+ARG NYM_VERSION
 RUN set -ex
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libssl-dev pkg-config git tini
