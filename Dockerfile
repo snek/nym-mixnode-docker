@@ -15,5 +15,5 @@ RUN set -ex && install_packages libssl1.1 ca-certificates
 COPY --from=builder /app/nym/target/release/nym-mixnode /usr/local/bin/
 COPY --from=builder /usr/bin/tini-static /tini
 COPY init.sh init.sh
-COPY config.toml /root/.nym/mixnodes/config/config.toml
+COPY config.toml /root/.nym/mixnodes/mixer/config/config.toml
 RUN ./init.sh
