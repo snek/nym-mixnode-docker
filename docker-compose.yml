@@ -13,4 +13,4 @@ services:
         - NYM_VERSION=v0.9.2
     volumes:
       - ./config.toml:/root/.nym/mixnodes/mixer/config/config.toml
-    command: "nym-mixnode run --id=mixer"
+      - ./data:/root/.nym/mixnodes/mixer/data
