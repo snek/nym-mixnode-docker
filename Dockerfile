@@ -1,5 +1,5 @@
 FROM rust:1-slim-buster AS builder
-ARG NYM_VERSION=v0.9.2
+ARG NYM_VERSION=v0.10.0
 WORKDIR /app
 RUN set -ex \
     && apt-get update \

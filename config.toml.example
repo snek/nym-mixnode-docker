@@ -1,12 +1,55 @@
 [mixnode]
-id = 'your-unique-name'
-location = 'some location - not required'
-layer = 3 #can be 1, 2 or 3
-listening_address = '0.0.0.0:1789'
-private_sphinx_key_file = '/root/.nym/mixnodes/mixer/data/private_sphinx.pem'
-public_sphinx_key_file = '/root/.nym/mixnodes/mixer/data/public_sphinx.pem'
-announce_address = '123.123.123.123:1789' #your external ip and the port the mixer listens to 1789 being default
-presence_directory_server = 'https://directory.nymtech.net'
-metrics_directory_server = 'https://directory.nymtech.net'
+version = '0.10.0'
+    
+# Human readable ID of this particular mixnode.
+id = 'mixer'
+   
+# Layer of this particular mixnode determining its position in the network.
+layer = 2
+
+# Socket address to which this mixnode will bind to and will be listening for packets.
+listening_address = '165.22.206.54:1789'
+
+# Path to file containing private identity key.
+private_identity_key_file = '/home/nym/.nym/mixnodes/mixer/data/private_identity.pem'
+
+# Path to file containing public identity key.
+public_identity_key_file = '/home/nym/.nym/mixnodes/mixer/data/public_identity.pem'
+
+# Path to file containing private identity key.
+private_sphinx_key_file = '/home/nym/.nym/mixnodes/mixer/data/private_sphinx.pem'
+
+# Path to file containing public sphinx key.
+public_sphinx_key_file = '/home/nym/.nym/mixnodes/mixer/data/public_sphinx.pem'
+
+##### additional mixnode config options #####
+
+# Optional address announced to the directory server for the clients to connect to.
+# It is useful, say, in NAT scenarios or wanting to more easily update actual IP address
+# later on by using name resolvable with a DNS query, such as `nymtech.net:8080`.
+# Additionally a custom port can be provided, so both `nymtech.net:8080` and `nymtech.net`
+# are valid announce addresses, while the later will default to whatever port is used for
+# `listening_address`.
+announce_address = 'nym-ams3-01.robotsystematic.com:1789'
+
+# Validator server to which the node will be reporting their presence data.
+validator_rest_url = 'http://testnet-finney-validator.nymtech.net:1317'
+
+# Metrics server to which the node will be reporting their metrics data.
+metrics_server_url = 'http://testnet-metrics.nymtech.net:8080'
+
+# Address of the validator contract managing the network.
+mixnet_contract_address = 'hal1k0jntykt7e4g3y88ltc60czgjuqdy4c9c6gv94'
+
+##### advanced configuration options #####
+
+# Absolute path to the home Nym Clients directory.
 nym_root_directory = '/root/.nym/mixnodes'
+
+
+##### logging configuration options #####
+
 [logging]
+
+# TODO
+
