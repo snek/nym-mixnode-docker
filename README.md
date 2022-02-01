@@ -1,3 +1,6 @@
+# OUTDATED / ABANDONED
+Considering I don't see too much point in running the mixnode in docker in production due to IPv4/IPv6 combination and limits to amount of nodes per user I am not updating this unless I see a reason for it again.
+
 # nym-mixnode-docker
 This is a multistage Docker image of the nym mixnode. 
 The official nym repository can be found here:
